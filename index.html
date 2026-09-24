@@ -173,7 +173,7 @@ details[open] .plus{transform:rotate(45deg)}
 .values div:nth-child(even){border-top-color:var(--blue)}
 .values b{display:block;font:600 1rem var(--head);margin-bottom:.3rem}
 .values div span{font-size:.92rem;font-weight:400;color:var(--muted);line-height:1.45;display:block;background:none;border:0;border-radius:0;padding:0}
-.news li{grid-template-columns:48px 1fr;align-items:center}
+.news li{grid-template-columns:48px 1fr auto;align-items:center}
 .aic{width:48px;height:48px;border-radius:12px;background:var(--blue-soft);color:var(--blue-deep);display:grid;place-items:center}
 .aic svg{width:24px;height:24px}
 .news .pin{margin-left:0;display:inline-block;margin-bottom:.15rem}
@@ -188,7 +188,13 @@ details[open] .plus{transform:rotate(45deg)}
 .policybook .btn svg{width:16px;height:16px}
 .cross .t2{bottom:14%;left:-4%}
 @media (max-width:960px){.values{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:760px){.values{grid-template-columns:1fr 1fr}.policybook{grid-template-columns:1fr}.news li{grid-template-columns:48px 1fr}}
+@media (max-width:760px){.values{grid-template-columns:1fr 1fr}.policybook{grid-template-columns:1fr}.news li{grid-template-columns:48px 1fr}.open-memo{grid-column:2;justify-self:start}}
+
+.memo-link{color:var(--ink);text-decoration:none}
+.memo-link:hover{color:var(--blue-deep);text-decoration:underline}
+.open-memo{display:inline-flex;gap:.4rem;align-items:center;text-decoration:none;font:600 .9rem var(--head);color:var(--blue-deep)!important;background:var(--blue-soft);padding:.55rem .95rem;border-radius:10px;white-space:nowrap}
+.open-memo:hover{background:color-mix(in srgb,var(--blue) 22%,transparent)}
+.open-memo svg{width:15px;height:15px}
 
 footer{border-top:1px solid var(--line);padding:2rem 0 2.5rem;color:var(--muted);font-size:.93rem}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
@@ -307,11 +313,11 @@ footer img{height:44px;width:auto}
 
   <section class="block" id="news">
     <div class="wrap">
-      <div class="sec-head"><div><h2>Announcements</h2><p>Memos and guidelines everyone should know about.</p></div></div>
+      <div class="sec-head"><div><h2>Announcements</h2><p>Memos and guidelines everyone should know about. Click a memo to open the file.</p></div></div>
       <ul class="news">
-        <li><div class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/></svg></div><div><span class="pin">Pinned</span><h3>KHealth &amp; Careview Memorandum No. 46, s. 2026</h3></div></li>
-        <li><div class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/></svg></div><div><span class="pin">Pinned</span><h3>MAPS: Walk-in Patients Requiring Financial Assistance</h3></div></li>
-        <li><div class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/></svg></div><div><span class="pin">Pinned</span><h3>R|Q|A Issuance Guidelines</h3></div></li>
+        <li><div class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/></svg></div><div><span class="pin">Pinned</span><h3><a class="memo-link" href="https://drive.google.com/file/d/1mzJTvZybmN741W8YUWf8kk8tM_KCwxNy/view?usp=drive_link" target="_blank" rel="noopener">KHealth &amp; Careview Memorandum No. 46, s. 2026</a></h3></div><a class="open-memo" href="https://drive.google.com/file/d/1mzJTvZybmN741W8YUWf8kk8tM_KCwxNy/view?usp=drive_link" target="_blank" rel="noopener" aria-label="Open KHealth &amp; Careview Memorandum No. 46, s. 2026">Open memo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+        <li><div class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/></svg></div><div><span class="pin">Pinned</span><h3><a class="memo-link" href="https://drive.google.com/file/d/1xQlvly7FD0YYxyiQ9oAT1Hn7TbgwsrS7/view?usp=drive_link" target="_blank" rel="noopener">MAPS: Walk-in Patients Requiring Financial Assistance</a></h3></div><a class="open-memo" href="https://drive.google.com/file/d/1xQlvly7FD0YYxyiQ9oAT1Hn7TbgwsrS7/view?usp=drive_link" target="_blank" rel="noopener" aria-label="Open MAPS: Walk-in Patients Requiring Financial Assistance">Open memo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+        <li><div class="aic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/></svg></div><div><span class="pin">Pinned</span><h3><a class="memo-link" href="https://drive.google.com/file/d/1gX1w19bYjJCE8i-3mxBa4HS37MnDeTiI/view?usp=sharing" target="_blank" rel="noopener">R|Q|A Issuance Guidelines</a></h3></div><a class="open-memo" href="https://drive.google.com/file/d/1gX1w19bYjJCE8i-3mxBa4HS37MnDeTiI/view?usp=sharing" target="_blank" rel="noopener" aria-label="Open R|Q|A Issuance Guidelines">Open memo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
       </ul>
     </div>
   </section>
